@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {addBlank} from '../actions';
 import Input from '../components/Input';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => { 
   return {
   	name: ownProps.name
   } 
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchProps = (dispatch, ownProps) => {
   return {
-    onKeyPress: (text, name) => {
+    onKeyDown: (text, name) => {
       dispatch(addBlank(text, name))
     }
   }

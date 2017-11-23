@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import AppDoc from '../components/AppDoc';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
   	documentList: state
   };
