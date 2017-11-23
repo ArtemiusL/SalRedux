@@ -1,21 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import 'bulma/css/bulma.css'
-import { Routes } from './Routes/Routes'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reduceBlank from './reducers/index';
+import App from './components/App';
 
-const title = "Minimilistic React-webpack-3-boilerplate [2017]"
-class App extends React.Component {
-    render() {
-        return (
-        	<div>
-        	    <div className="column is-half is-offset-one-quarter">
-        	        <div className="title">{title}</div>
-        	    </div>
-        	    <Routes />
-        	</div>
-        )
-    }
-}
-
-ReactDOM.render(<App/>, app)
+let store = createStore(reduceBlank);
+console.log(store);
+ReactDOM.render(<Provider store={store}>
+    <App />
+  </Provider>, app)
 module.hot.accept();
