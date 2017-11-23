@@ -1,6 +1,7 @@
-export const addBlank = (text) => {
+export const addBlank = (text, name) => {
 	return {
 		type: 'ADD_BLANK',
-		text
+		text,
+		name
 	}
 }

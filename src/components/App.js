@@ -1,6 +1,7 @@
 import React from 'react';
-import Blank from '../containers/Blank';
+import Forma from './Forma';
 import Display from './Display';
+import ContainerDoc from '../containers/ContainerDoc';
 
 
 class App extends React.Component {
@@ -9,8 +10,8 @@ class App extends React.Component {
         	<div>
         	Приветики!
         	<div style={{'display': 'flex', 'width': '500px', 'justifyContent': 'space-between'}}>
-        		<Blank />
-        		<Display />
+        		<Forma />
+        		<ContainerDoc />
         	</div>
         	</div>
         )
