@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 class Input extends React.Component {
     render() {
     	let input;
-    	let onKeyPress = this.props.onKeyPress;
+    	let onKeyDown = this.props.onKeyDown;
         let name = this.props.name;
         return (
-        		<input onKeyPress={e => {
-        			console.log(e);
-        			onKeyPress(e.target.value, name)
+        		<input required name={name} type={this.props.type} onChange={e => {
+        			onKeyDown(e.target.value, name)
         		}} ref={node => {
         			input = node
         		}} />
@@ -19,8 +18,8 @@ class Input extends React.Component {
 
 Input.propTypes = {
   name: PropTypes.string,
-  onKeyPress: PropTypes.func.isRequired
-  
+  onKeyDown: PropTypes.func.isRequired,
+  type: PropTypes.string
 }
 
 export default Input;

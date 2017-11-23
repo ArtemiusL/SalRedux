@@ -6,6 +6,7 @@ class Display extends React.Component {
         return (
         	<div>
             <b>{this.props.name}</b>
+            <br />
         	<span>{this.props.text}</span>
         	</div>
         )
