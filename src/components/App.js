@@ -7,12 +7,12 @@ import ContainerDoc from '../containers/ContainerDoc';
 class App extends React.Component {
     render() {
         return (
-        	<div>
-        	Приветики!
-        	<div style={{'display': 'flex', 'width': '500px', 'justifyContent': 'space-between'}}>
+        	<div className="site-container">
+                <h1> Заявка на получение кредита. </h1>
+                <div className="site-flex">
         		<Forma />
         		<ContainerDoc />
-        	</div>
+                </div>
         	</div>
         )
     }
