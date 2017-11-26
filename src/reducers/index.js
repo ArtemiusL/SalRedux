@@ -20,7 +20,8 @@ const initialState = [
 		name: 'dateDay',
 		text: '',
 		lowerLimit: 1,
-		upperLimit: 31
+		upperLimit: 31,
+		reverse: false
 	},
 	{
 		name: 'dateMonth',
@@ -32,7 +33,8 @@ const initialState = [
 		name: 'dateYear',
 		text: '',
 		lowerLimit: 1941,
-		upperLimit: 1998
+		upperLimit: 1998,
+		reverse: true
 	},
 	{
 		name: 'tel',
@@ -52,7 +54,9 @@ const initialState = [
 	{
 		name: 'credit',
 		text: ' ',
-		type: 'email'
+		variant: ['Есть кредит, были просрочки платежа', 'Есть текущая просроченная задолженность',
+		 'Есть кредит, просрочек нет', 'Никогда не брал кредит',
+		 'Кредит погашен, были просрочки','Кредит погашен, просрочек не было']
 	},
 ]
 
