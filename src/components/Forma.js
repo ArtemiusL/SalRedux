@@ -27,7 +27,7 @@ class Forma extends React.Component {
                   <ContainerInput name={'patronymic'} />
                 </div>
 
-                <div className="form-flex__item"> 
+                <div className="form-flex__item--select"> 
                   <label>Дата рождения</label>
                   <div className="form-flex__item-date">
                     <ContainerSelect name={'dateDay'} />
