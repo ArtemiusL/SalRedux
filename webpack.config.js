@@ -1,5 +1,6 @@
 const webpack = require('webpack')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const config = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
@@ -27,7 +28,19 @@ const config = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: ['babel-loader', 'eslint-loader']
-            }
+            },
+                        {
+                test: /\.jpg$/,
+                use: "url-loader?limit=10000&mimetype=image/jpg"
+            },
+            {
+                test: /\.png$/,
+                use: "url-loader?limit=10000&mimetype=image/png"
+            },
+            {
+                test: /\.svg/,
+                use: "url-loader?limit=26000&mimetype=image/svg+xml"
+            },
         ],
     },
     resolve: {

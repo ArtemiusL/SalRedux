@@ -6,7 +6,7 @@ class Select extends React.Component {
         const state = this.props.state;
         let rows = [];
         
-        if(state.name === 'dateMonth') {
+        if(state.variant) {
             rows = state.variant.map((item, index) => {
                 return <option key={index}>{item}</option>
             })
@@ -15,7 +15,7 @@ class Select extends React.Component {
         for (let i = state.lowerLimit; i <= state.upperLimit; i++) {
             rows.push(<option key={i}>{i}</option>);
         }
-        if(state.name === 'dateYear') {
+        if(state.reverse) {
             rows.reverse();
         }
         }

@@ -1,0 +1,148 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+  font-family: Roboto;
+}
+*:focus {
+	outline: none;
+}
+a {
+	text-decoration: none;
+	
+}
+html {
+  font-size: 2.2vw;
+  line-height: 1.2;
+  background-color: #fff;
+}
+.main-body {
+	font-family: "Roboto", "Tahoma", sans-serif;
+	font-weight: 400;
+	width: 100%;
+	overflow-x: hidden;
+  max-width: 1920px;
+  min-width: 315px;
+  background-color: #244b69;
+  margin: 0 auto;
+  background-image: url(../img/credits-background.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.site-title {
+	font-weight: 300;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 30px;
+	color: rgba(255,255,255, 0.9);
+}
+.site-flex {
+	display: flex;
+}
+.site-left {
+	width: 47.5%;
+	margin-right: 5%;
+	flex-shrink: 0;
+	background-color: #fff;
+}
+.main-form {
+	color: rgba(10,30,50,0.9);
+	padding: 15px;
+}
+.main-form__title {
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+.form-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+.form-flex__item {
+	width: 100%;
+	margin: 0% 1%;
+}
+.form-flex__item label {
+	width: 200px;
+	text-align: right;
+	display: inline-block;
+	font-size: 17px;
+	line-height: 20px;
+	margin-right: 20px;
+}
+.form-flex__item input {
+	border: none;
+	border-bottom: 1px solid rgba(10,30,50,0.9);
+	display: inline-block;
+	width: 250px;
+	font-size: 17px;
+	line-height: 20px;
+	padding-bottom: 10px;
+}
+
+.site-right {
+	width: 47.5%;
+	background-color: #fff;
+}
+.main-blank {
+	padding: 15px;
+	background-color: rgba(10,30,50,0.9);
+	color: #fff;
+}
+.main-blank__title {
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+.blank-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+.main-blank__item {
+	width: 100%;
+}
+.main-blank__item-title {
+	width: 200px;
+	text-align: left;
+	display: inline-block;
+	font-size: 17px;
+	line-height: 20px;
+	margin-right: 20px;
+	text-transform: uppercase;
+	color: #f54040;
+}
+.main-blank__item-value {
+	border-bottom: 1px solid #f54040;
+	display: inline-block;
+	width: 250px;
+	font-size: 17px;
+	line-height: 17px;
+	height: 30px;
+	overflow: hidden;
+}
+
+
+
+
+
+
