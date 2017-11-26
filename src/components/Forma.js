@@ -7,8 +7,7 @@ import PropTypes from 'prop-types';
 class Forma extends React.Component {
     render() {
         return ( 
-          <section className="site-right">
-            <h2 className="Получите деньги сегодня!"></h2>
+          <section className="site-left">
         		<form className="main-form">
               <h3 className="main-form__title"> Введите ваши персональные данные </h3>
               <div className="form-flex">
@@ -28,7 +27,7 @@ class Forma extends React.Component {
                   <ContainerInput name={'patronymic'} />
                 </div>
 
-                <div className="form-flex__item"> 
+                <div className="form-flex__item--select"> 
                   <label>Дата рождения</label>
                   <div className="form-flex__item-date">
                     <ContainerSelect name={'dateDay'} />
@@ -51,11 +50,11 @@ class Forma extends React.Component {
                   <label>Email</label>
                   <ContainerInput name={'email'} />
                 </div>
-{/*
+
                 <div className="form-flex__item"> 
                   <label>Кредитная история</label>
                   <ContainerSelect name={'credit'} />
-                </div>*/}
+                </div>
 
                 <button>Отправить</button>
               </div>
