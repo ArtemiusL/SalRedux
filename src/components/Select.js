@@ -5,7 +5,8 @@ class Select extends React.Component {
     render() {
         const state = this.props.state;
         let rows = [];
-        
+        let onKeyDown = this.props.onKeyDown;
+        let name = this.props.name; 
         if(state.variant) {
             rows = state.variant.map((item, index) => {
                 return <option key={index}>{item}</option>
@@ -20,7 +21,11 @@ class Select extends React.Component {
         }
         }
         return (
-                <select>
+                <select
+                    onChange={e => {
+                        const value = e.target.value.trim();
+                        onKeyDown(value, name)
+                    }} >
                     {rows}
                 </select>
         )
@@ -28,7 +33,9 @@ class Select extends React.Component {
 }
 
 Select.propTypes = {
-  state: PropTypes.object
+  state: PropTypes.object,
+  name: PropTypes.string,
+  onKeyDown: PropTypes.func.isRequired
 }
 
 export default Select;
