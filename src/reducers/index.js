@@ -1,12 +1,12 @@
 import React from 'react';
 
-const initialState = [
+let initialState = [
 	{
 		name: 'name',
 		label: 'Имя',
 		text: '',
 		type: 'text',
-		validation: new RegExp('^[А-Яё]+$', 'i'),
+		validation: '^[А-Яё]+$',
 		validationText: 'Имя должно быть написано русскими буквами'
 	},
 	{
@@ -14,7 +14,7 @@ const initialState = [
 		label:'Фамилия',
 		text: '',
 		type: 'text',
-		validation: new RegExp('^[А-Яё]+$', 'i'),
+		validation: '^[А-Яё]+$',
 		validationText: 'Фамилия должна быть написана русскими буквами'
 	},
 	{
@@ -22,7 +22,7 @@ const initialState = [
 		label:'Отчество',
 		text: '',
 		type: 'text',
-		validation: new RegExp('^[А-Яё]+$', 'i'),
+		validation: '^[А-Яё]+$',
 		validationText: 'Отчество должно быть написано русскими буквами'
 	},
 	{
@@ -53,7 +53,7 @@ const initialState = [
 		label:'Мобильный телефон',
 		text: '',
 		type: 'tel',
-		validation: new RegExp('^[0-9]{11}$', 'i'),
+		validation: '^[0-9]{11}$',
 		validationText: 'Телефон указан неверно. Должно быть 11 цифр, например: 89011234567'
 	},
 	{
@@ -61,7 +61,7 @@ const initialState = [
 		label:'Город проживания',
 		text: ' ',
 		type: 'text',
-		validation: new RegExp('^[А-Я]+$', 'i'),
+		validation: '^[А-Я]+$',
 		validationText: 'Город должен быть написан русскими буквами'
 	},
 	{
@@ -69,7 +69,7 @@ const initialState = [
 		label:'Email',
 		text: ' ',
 		type: 'email',
-		validation: new RegExp('^[a-z0-9]+?@[a-z0-9]+?\\.[a-z]{2,6}$', 'i'),
+		validation: '^[a-z0-9]+?@[a-z0-9]+?\\.[a-z]{2,6}$',
 		validationText: 'Укажите корректный email. Например: name@mail.ru'
 	},
 	{
@@ -82,7 +82,10 @@ const initialState = [
 	},
 ]
 
-
+const localFilds = JSON.parse(localStorage.getItem('filds'));
+if(localFilds) {
+	initialState = localFilds;
+}
 const reduceBlank = (state = initialState, action) => {
 	switch (action.type) {
 		case 'ADD_BLANK':
