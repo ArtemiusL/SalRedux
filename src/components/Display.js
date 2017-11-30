@@ -5,7 +5,7 @@ class Display extends React.Component {
     render() {
         return (
         	<div className="main-blank__item">
-            <h3 className="main-blank__item-title">{this.props.name}</h3>
+            <h3 className="main-blank__item-title">{this.props.label}</h3>
         	<p className="main-blank__item-value">{this.props.text}</p>
         	</div>
         )
@@ -14,7 +14,7 @@ class Display extends React.Component {
 
 Display.propTypes = {
   text: PropTypes.string,
-  name: PropTypes.string,
+  label: PropTypes.string,
 }
 
 export default Display; 
