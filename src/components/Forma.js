@@ -12,20 +12,11 @@ class Forma extends React.Component {
               <h3 className="main-form__title"> Введите ваши персональные данные </h3>
               <div className="form-flex">
 
-                <div className="form-flex__item"> 
-                  <label>Фамилия</label>
-                  <ContainerInput name={'lastName'} />
-                </div>
-                
-                <div className="form-flex__item"> 
-                  <label>Имя</label>
-                  <ContainerInput name={'name'} />
-                </div>
+                <ContainerInput name={'lastName'} />
 
-                <div className="form-flex__item"> 
-                  <label>Отчество</label>
-                  <ContainerInput name={'patronymic'} />
-                </div>
+                <ContainerInput name={'name'} />
+
+                <ContainerInput name={'patronymic'} />
 
                 <div className="form-flex__item--select"> 
                   <label>Дата рождения</label>
@@ -36,27 +27,17 @@ class Forma extends React.Component {
                   </div>
                 </div>
 
-                <div className="form-flex__item"> 
-                  <label>Мобильный телефон</label>
-                  <ContainerInput name={'tel'} />
-                </div>
+                <ContainerInput name={'tel'} />
 
-                <div className="form-flex__item"> 
-                  <label>Город проживания</label>
-                  <ContainerInput name={'city'} />
-                </div>
+                <ContainerInput name={'city'} />
 
-                <div className="form-flex__item"> 
-                  <label>Email</label>
-                  <ContainerInput name={'email'} />
-                </div>
+                <ContainerInput name={'email'} />
 
                 <div className="form-flex__item"> 
                   <label>Кредитная история</label>
                   <ContainerSelect name={'credit'} />
                 </div>
-
-                <button>Отправить</button>
+                
               </div>
         		</form>
           </section>
