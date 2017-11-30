@@ -5,16 +5,25 @@ import {addBlank} from '../actions/index';
 const mapStateToProps = (state, ownProps) => {
   const newState = state.filter((item) => {
     return item.name === ownProps.name
-  })
+  });
+  const condition = /^[А-Я]$/i;
   return {
-    state: newState[0]
+    state: newState[0],
+    onBlur: (value) => {
+      if(condition.test(value)) {
+        console.log('ВСё ок!');
+      }
+      else {
+        console.log('ВСэ стрем');
+      }
+    }
   } 
 }
 
 const mapDispatchProps = (dispatch) => {
   return {
     onKeyDown: (text, name) => {
-      dispatch(addBlank(text, name))
+      dispatch(addBlank(text, name));
     }
   }
 }
