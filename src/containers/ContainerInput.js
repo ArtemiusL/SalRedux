@@ -1,21 +1,19 @@
 import { connect } from 'react-redux';
 import Input from '../components/Input';
 import {addBlank} from '../actions/index';
+import {validation} from '../Util/validation';
 
 const mapStateToProps = (state, ownProps) => {
+   // Находим нужный объект
   const newState = state.filter((item) => {
     return item.name === ownProps.name
   });
-  const condition = /^[А-Я]$/i;
+   // Берем регулярное выражение
+  const condition = newState[0].validation;
   return {
     state: newState[0],
     onBlur: (value) => {
-      if(condition.test(value)) {
-        console.log('ВСё ок!');
-      }
-      else {
-        console.log('ВСэ стрем');
-      }
+      validation(condition, value);
     }
   } 
 }
@@ -23,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchProps = (dispatch) => {
   return {
     onKeyDown: (text, name) => {
-      dispatch(addBlank(text, name));
+      let goodText = text[0].toUpperCase() + text.slice(1);
+      dispatch(addBlank(goodText, name));
     }
   }
 }
