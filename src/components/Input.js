@@ -6,12 +6,21 @@ class Input extends React.Component {
     	let input;
     	let onKeyDown = this.props.onKeyDown;
         let name = this.props.name;
+        let onBlur = this.props.onBlur;
         return (
-        		<input required name={name} type={this.props.type} onChange={e => {
+        		<input 
+                required 
+                name={name} 
+                type={this.props.type} 
+                onChange={e => {
         			onKeyDown(e.target.value, name)
-        		}} ref={node => {
+        		}} 
+                ref={node => {
         			input = node
-        		}} />
+        		}}
+                onBlur={e => {
+                    onBlur(e.target.value);
+                }} />
         )
     }
 }
@@ -19,6 +28,7 @@ class Input extends React.Component {
 Input.propTypes = {
   name: PropTypes.string,
   onKeyDown: PropTypes.func.isRequired,
+  onBlur: PropTypes.func,
   type: PropTypes.string
 }
 
