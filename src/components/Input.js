@@ -17,9 +17,7 @@ class Input extends React.Component {
                     name={name} 
                     type={this.props.type} 
                     onChange={e => {
-                        console.log(e.target.value);
                         let value = e.target.value.trim().toLowerCase();
-                        console.log(value);
                         if(value) {
                            onKeyDown(value, name);
                         }
