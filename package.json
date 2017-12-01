@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server -d --env.platform=default --progress --hot",
-    "build": "NODE_ENV='production' webpack -p --progress --hot",
+    "build": "set NODE_ENV='production' webpack -p --progress --hot",
     "test": "jest --config jest.config.json --updateSnapshot"
   },
   "keywords": [],

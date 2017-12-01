@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class Input extends React.Component {
     render() {
-    	let input;
     	let onKeyDown = this.props.onKeyDown;
         let name = this.props.name;
         let state = this.props.state;
@@ -26,9 +25,6 @@ class Input extends React.Component {
                         }
 
             		}} 
-                    ref={node => {
-            			input = node
-            		}}
                     onBlur={e => {
                         onBlur(e.target);
                     }} /> 
