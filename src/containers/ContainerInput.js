@@ -24,7 +24,6 @@ const mapDispatchProps = (dispatch) => {
   return {
     onKeyDown: (text, name) => {
       let goodText = text[0].toUpperCase() + text.slice(1);
-      console.log(`Это гуд-текст - ${goodText}`);
       dispatch(addBlank(goodText, name));
     }
   }
