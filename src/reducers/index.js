@@ -83,7 +83,6 @@ let initialState = [
 ]
 
 const localFilds = JSON.parse(localStorage.getItem('filds'));
-
 //если есть данные в локал сторадже заменяем ими initialState
 if(localFilds) {
 	initialState = localFilds;
