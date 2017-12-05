@@ -2,44 +2,54 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Input extends React.Component {
-    render() {
-    	let onKeyDown = this.props.onKeyDown;
-        let name = this.props.name;
-        let state = this.props.state;
-        let label = state.label;
-        let validationText = state.validationText;
-        let onBlur = this.props.onBlur;
-        return (
-                <div className="form-flex__item">
-                    <label>{label}</label>
-            		<input 
-                    required 
-                    name={name} 
-                    type={this.props.type} 
-                    onChange={e => {
-                        let value = e.target.value.trim().toLowerCase();
-                        if(value) {
-                           onKeyDown(value, name);
-                        }
+  constructor() {
+    super();
+    this.onChange = this.onChange.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+  }
 
-            		}} 
-                    onBlur={e => {
-                        onBlur(e.target);
-                    }} /> 
-                    <br />
-                    <p className="form-flex__validation">{validationText}</p>
-                </div>
-        )
+  onChange(e) {
+    const onChange = this.props.onChange;
+    let value = e.target.value.trim().toLowerCase();
+    let name = e.target.name;
+    if (value) {
+      onChange(value, name);
     }
+  }
+
+  onBlur(e) {
+    const { onBlur } = this.props;
+    const { value, name } = e.target;
+    onBlur(value, name);
+  }
+
+  render() {
+    const {value, name, label, validationText, type} = this.props;
+    return (
+      <div className="form-flex__item">
+        <label>{label}</label>
+        <input
+          required
+          name={name}
+          type={type}
+          onChange={this.onChange}
+          onBlur={this.onBlur}
+          defaultValue={value} />
+          <br />
+          <p className="form-flex__validation">{validationText}</p>
+      </div>
+    )
+  }
 }
 
 Input.propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
-  onKeyDown: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
   type: PropTypes.string,
-  state: PropTypes.object
+  value: PropTypes.string,
+  validationText: PropTypes.string
 }
 
 export default Input;

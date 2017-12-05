@@ -1,7 +1,7 @@
-export const addBlank = (text, name) => {
+export const addField = (value, name) => {
 	return {
-		type: 'ADD_BLANK',
-		text,
+		type: 'ADD_FIELD',
+		value,
 		name
 	}
 }

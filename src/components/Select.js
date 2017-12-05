@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 
 class Select extends React.Component {
     render() {
-        const state = this.props.state;
+        const {onKeyDown} = this.props;
         let rows = [];
-        let onKeyDown = this.props.onKeyDown;
         let name = this.props.name; 
         if(state.variant) {
             rows = state.variant.map((item, index) => {
