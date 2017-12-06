@@ -9,7 +9,7 @@
 }
 a {
 	text-decoration: none;
-	
+
 }
 html {
   font-size: 2.2vw;
@@ -102,6 +102,15 @@ html {
 	line-height: 20px;
 	padding-bottom: 10px;
 }
+.form-flex__item select {
+	border: none;
+	border-bottom: 1px solid rgba(10,30,50,0.9);
+	display: inline-block;
+	width: 290px;
+	font-size: 17px;
+	line-height: 20px;
+	padding-bottom: 10px;
+}
 .form-flex__item label::after {
 	content: '';
 	display: none;
@@ -150,7 +159,7 @@ html {
 .form-flex__item.fail .form-flex__validation {
 	display: block;
 }
-.form-flex__item select {
+/*.form-flex__item select {
 	border: none;
 	border-bottom: 1px solid rgba(10,30,50,0.9);
 	display: inline-block;
@@ -164,9 +173,9 @@ html {
 	appearance:none;
 	margin: 0px 4px;
 	text-align: center;
-  -moz-appearance:none; /* Firefox */
-  -webkit-appearance:none; /* Safari and Chrome */
-}
+  -moz-appearance:none; 
+  -webkit-appearance:none;
+}*/
 .form-flex__item--select {
 	display: flex;
 	padding: 15px 0px;
@@ -244,9 +253,3 @@ html {
 	min-height: 30px;
 	overflow: hidden;
 }
-
-
-
-
-
-
