@@ -22,14 +22,12 @@ class InputContainer extends Component {
   }
 
   createSelect(item, index, value){
-    // return(
-    //     <Select {...item}
-    //       key={`input-${index}`}
-    //       onBlur={this.onBlur}
-    //       onChange={this.onChange}
-    //     />
-    //   )
-    return null;
+     return(
+         <Select {...item}
+           key={`input-${index}`}
+           onChange={this.onChange}
+         />
+       )
   }
 
   createInput(item, index, value){
@@ -46,9 +44,10 @@ class InputContainer extends Component {
     const {fields} = this.props;
     return data.map((item, index) => {
       const {name} = item;
-      const {value} = fields.filter((field) => {
+      const curruntFields = fields.filter((field) => {
         return name === field.name;
       });
+      const {value} = curruntFields[0];
       if(item.type) {
         return this.createInput(item, index, value);
       } else {

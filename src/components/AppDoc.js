@@ -9,9 +9,9 @@ class AppDoc extends React.Component {
         		<div>
         			{documentList.map((item, index) => {
         				return (
-        					<Display 
-        					label={item.label}
-        					text={item.text}
+        					<Display
+        					name={item.name}
+        					value={item.value}
                             key={index} />
         					);
         			})}
