@@ -5,7 +5,7 @@ import AppDoc from '../components/AppDoc';
 
 const mapStateToProps = (state) => {
   return {
-  	documentList: state
+  	documentList: state.fields
   };
 }
 

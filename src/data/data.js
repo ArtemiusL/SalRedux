@@ -29,14 +29,17 @@ export const data = [
     text: '',
     lowerLimit: 1,
     upperLimit: 31,
-    reverse: false
+    reverse: false,
+    variant: null
   },
   {
     name: 'dateMonth',
     label: 'Месяц рождения',
     text: '',
-    variant: ['Январь', 'Феварль', 'Март', 'Апрель', 'Май','Июнь', 
-    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+    variant: ['Январь', 'Феварль', 'Март', 'Апрель', 'Май','Июнь',
+    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    lowerLimit: null,
+    upperLimit: null
   },
   {
     name: 'dateYear',
@@ -44,7 +47,8 @@ export const data = [
     text: '',
     lowerLimit: 1941,
     upperLimit: 1998,
-    reverse: true
+    reverse: true,
+    variant: null
   },
   {
     name: 'tel',
@@ -76,6 +80,8 @@ export const data = [
     text: ' ',
     variant: ['Есть кредит, были просрочки платежа', 'Есть текущая просроченная задолженность',
      'Есть кредит, просрочек нет', 'Никогда не брал кредит',
-     'Кредит погашен, были просрочки','Кредит погашен, просрочек не было']
+     'Кредит погашен, были просрочки','Кредит погашен, просрочек не было'],
+    lowerLimit: null,
+    upperLimit: null
   },
 ]

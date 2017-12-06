@@ -50,12 +50,24 @@ const localFields = JSON.parse(localStorage.getItem('filds'));
 if (localFields) {
 	initialState = localFields;
 }
-
+const fields = (state = [], action) => {
+	switch (action.type) {
+		case 'ADD_FIELD':
+			return state.map((item) => {
+				if(item.name === action.name) {
+					item.value = action.value;
+				}
+				return item;
+			})
+	}
+}
 const reduceBlank = (state = initialState, action) => {
 	switch (action.type) {
-		case 'ADD_FIELDS':
-			return state;
-		default: 
+		case 'ADD_FIELD':
+			return {
+				fields: fields(state.fields, action)
+			}
+		default:
 			return state;
 	}
 }
