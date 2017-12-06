@@ -10,7 +10,7 @@ class Input extends React.Component {
 
   onChange(e) {
     const onChange = this.props.onChange;
-    let value = e.target.value.trim().toLowerCase();
+    let value = e.target.value.trim();
     let name = e.target.name;
     if (value) {
       onChange(value, name);

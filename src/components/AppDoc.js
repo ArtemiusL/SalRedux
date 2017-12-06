@@ -1,21 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Display from './Display';
+import {arrayToObject} from '../Util/arrayToObject';
 
 class AppDoc extends React.Component {
     render() {
-    	let documentList = this.props.documentList;
+    	const {documentList} = this.props;
+      const data = arrayToObject(documentList);
         return (
-        		<div>
-        			{documentList.map((item, index) => {
-        				return (
-        					<Display
-        					name={item.name}
-        					value={item.value}
-                            key={index} />
-        					);
-        			})}
-        		</div>
+  				<Display
+            {...data}
+          />
         )
     }
 }
